@@ -16,7 +16,6 @@ public class A02_orderAgnosticBS {
             if (target == arr[middleValue]) {
                 return middleValue;
             } 
-
             if (isAscending) {
                 // it means array is in ascending order
                 
