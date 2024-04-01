@@ -3,7 +3,7 @@ class binSearch{
     public int searching(int[] arr, int target){
 
         int start = 0;
-        int end = arr.length;
+        int end = arr.length-1;
         
         while(start<=end){
             // int middleValue = (start + end)/2; // might be possible that (start + end) exceeds the range of integer in java
