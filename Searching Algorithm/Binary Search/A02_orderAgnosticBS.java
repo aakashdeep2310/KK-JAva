@@ -34,14 +34,9 @@ public class A02_orderAgnosticBS {
                 } else {
                     start = middleValue + 1;
                 }
-                
-
             }
-            
-            
         }
         return -1;
-
     }
 
     public static void main(String[] args) {
@@ -58,7 +53,6 @@ public class A02_orderAgnosticBS {
         } else {
             System.out.println("Element found on index : " + index);
         }
-
     }
 
 }
