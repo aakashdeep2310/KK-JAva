@@ -13,25 +13,26 @@ public class A02_orderAgnosticBS {
 
             int middleValue = start + (end - start) / 2;
 
+            if (target == arr[middleValue]) {
+                return middleValue;
+            } 
+
             if (isAscending) {
                 // it means array is in ascending order
-
-                if (target == arr[middleValue]) {
-                    return middleValue;
-                } else if (target > arr[middleValue]) {
+                
+                if (target > arr[middleValue]) {
                     start = middleValue + 1;
-                } else {
+                } 
+                else {
                     end = middleValue - 1;
                 }
             }
             else {
                 // it means array is in descending order
-
-                if (target == arr[middleValue]) {
-                    return middleValue;
-                } else if (target > arr[middleValue]) {
+                if (target > arr[middleValue]) {
                     end = middleValue - 1;
-                } else {
+                }
+                else {
                     start = middleValue + 1;
                 }
             }
@@ -45,7 +46,7 @@ public class A02_orderAgnosticBS {
         int[] arr = {2, 4, 5, 7, 9, 34, 54, 76, 88, 98, 101};
 
         // int target = 12;
-        int target = 101;
+        int target = 76;
         int index = searching(arr, target);
 
         if (index == -1) {
