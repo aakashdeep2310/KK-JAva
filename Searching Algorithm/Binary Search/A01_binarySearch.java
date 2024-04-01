@@ -6,7 +6,7 @@ class binSearch{
         int end = arr.length;
         
         while(start<=end){
-            int middleValue = (start + end)/2;
+            int middleValue = (start + end)/2; // might be possible that (start + end) exceeds the range of integer in java
 
             
             if(arr[middleValue] == target){
