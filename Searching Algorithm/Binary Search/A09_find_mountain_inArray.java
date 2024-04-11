@@ -4,7 +4,6 @@ public class A09_find_mountain_inArray {
         
     }
 
-
     static int search(int[] arr, int target){
         int peak = peakInMountainArray(arr);
         int firstTry = orderAgnostic(arr, target, 0, peak);
