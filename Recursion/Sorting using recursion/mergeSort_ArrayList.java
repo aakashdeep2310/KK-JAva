@@ -25,6 +25,7 @@ public class mergeSort_ArrayList {
         sl.mergeSort(arr, 0, arr.length - 1);
         printArray(arr);
     }
+    
 }
 
 class Solution {
