@@ -49,3 +49,25 @@ public class Merge_sort {
 
     }
 }
+
+/* 
+The main method:
+
+Initializes an array arr with some integers.
+Calls the mergeSort method to sort the array.
+Prints the sorted array using Arrays.toString.
+The mergeSort method:
+
+If the length of the input array is 1, it returns the array (base case).
+Otherwise, it calculates the middle index of the array.
+Recursively calls mergeSort on the left half and right half of the array.
+Merges the sorted left and right halves using the merge method.
+The merge method:
+
+Creates a new array mix to store the merged result, with a length equal to the sum of the lengths of the input arrays.
+Iterates through both input arrays (first and second) simultaneously.
+Compares elements at corresponding indices and adds the smaller element to the mix array.
+Copies any remaining elements from either array to the mix array.
+Returns the merged array.
+Overall, the code efficiently sorts the input array using the Merge Sort algorithm, which has a time complexity of O(n log n).
+*/
