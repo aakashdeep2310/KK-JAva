@@ -12,6 +12,7 @@ public class permutation {
         // System.out.println(ans);
         
 
+        
 
         //count function
         System.out.println(permutationRecCount("", "abcd"));
