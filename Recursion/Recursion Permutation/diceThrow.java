@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class diceThrow {
     public static void main(String[] args) {
         // dice("", 4);
-        ArrayList<String> ans = diceRec("", 4);
+        ArrayList<String> ans = diceRec("",2);
         System.out.println(ans);
     }
     
