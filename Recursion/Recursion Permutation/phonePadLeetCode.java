@@ -3,14 +3,14 @@ import java.util.ArrayList;
 
 public class phonePadLeetCode {
     public static void main(String[] args) {
-        // phonePad("", "3456");
+        phonePad("", "12");
 
         //using ArrayList
         // ArrayList<String> ans = phonePadList("", "12");
         // System.out.println(ans);
 
         //count 
-        System.out.println(phonePadCount("", "12"));
+        // System.out.println(phonePadCount("", "12"));
     }
 
     static void phonePad(String p, String up){
