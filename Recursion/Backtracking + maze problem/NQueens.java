@@ -27,6 +27,7 @@ public class NQueens {
                 count += queens(board, row+1);
                 board[row][col] = false;
             }
+            
         }
 
         return count;
