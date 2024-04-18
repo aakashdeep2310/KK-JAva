@@ -1,8 +1,8 @@
 public class NQueens {
     public static void main(String[] args) {
-        int n = 5;
+        int n = 4;
         boolean[][] board = new boolean[n][n];
-        queens(board, 0);
+        // queens(board, 0);
         // System.out.println(queens(board, 0));
         int count = queens(board, 0);
         System.out.println(count);
@@ -14,7 +14,6 @@ public class NQueens {
         if(row == board.length){
             display(board);
             System.out.println();
-
             return 1;
         }
 
@@ -27,7 +26,6 @@ public class NQueens {
                 count += queens(board, row+1);
                 board[row][col] = false;
             }
-            
         }
 
         return count;
@@ -57,7 +55,6 @@ public class NQueens {
                 return false;
             }
         }
-
         return true;
 
     }
@@ -73,8 +70,6 @@ public class NQueens {
             System.out.println();
         }
     }
-
-
 
     
 }
