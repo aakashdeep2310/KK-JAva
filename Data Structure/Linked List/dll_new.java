@@ -22,7 +22,6 @@ public class dll_new {
             this.next = next;
             this.prev = prev;
         }
-
     }
 
 
