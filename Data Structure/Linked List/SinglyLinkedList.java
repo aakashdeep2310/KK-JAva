@@ -11,6 +11,7 @@ public class SinglyLinkedList {
     private Node tail;
     private int size;
 
+    
     public SinglyLinkedList() {
         this.size = 0;
     }
