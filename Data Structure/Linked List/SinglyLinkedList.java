@@ -11,7 +11,7 @@ public class SinglyLinkedList {
     private Node tail;
     private int size;
 
-    
+
     public SinglyLinkedList() {
         this.size = 0;
     }
@@ -73,6 +73,9 @@ public class SinglyLinkedList {
             }
         }
 
+        public void insertAtlastN(int value){
+            
+        }
         
 
 
