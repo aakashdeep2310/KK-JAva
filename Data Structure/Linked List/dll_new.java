@@ -17,8 +17,6 @@ public class dll_new {
         public  Node(int value){
             this.value = value;
         }
-        
-
         public Node(int value, Node next, Node prev){
             this.value = value;
             this.next = next;
