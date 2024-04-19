@@ -14,9 +14,6 @@ public class dll_new {
         private Node next;
         private Node prev;
 
-
-    
-
         public  Node(int value){
             this.value = value;
         }
@@ -55,18 +52,22 @@ public class dll_new {
             insertFront(value);
         }else{
             Node node = new Node(value);
-            Node current = head;
+            node.next = null;
+            node.prev = null;
 
-            while(current != null){
-                current = current.next;
+            if(head == null){
+                insertFront(value);
+            }else{
+                Node tail = head;
+                while(tail.next != null){
+                    tail = tail.next;
+                }
+
+                tail.next = node;
+                node.prev = tail;
 
             }
 
-            current.next.next = node;
-            node.prev = current.next;
-            current = node;
-            // tail.next = null;
-            size++;
         }
 
         
