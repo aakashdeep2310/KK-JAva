@@ -124,7 +124,11 @@ public class ll_new {
          return value;
     }
 
+<<<<<<< HEAD
     public Node findNode(int val){ // to find the value at which node
+=======
+    public Node findNode(int val){
+>>>>>>> fe79f17d8045ff08cd26990234102f2a913e428c
         Node node = head;
         while (node != null) {
             if(node.value == val){
@@ -136,7 +140,11 @@ public class ll_new {
         return null;
     }
 
+<<<<<<< HEAD
     public Node get(int index){ // to find the value of node at any index
+=======
+    public Node get(int index){
+>>>>>>> fe79f17d8045ff08cd26990234102f2a913e428c
         Node node = head;
         for (int i = 0; i < index; i++) {
             node = node.next;
