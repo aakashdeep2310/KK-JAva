@@ -327,6 +327,80 @@
         }
         
 
+        public Node detectCycle(Node head) {
+            int length = 0; 
+            Node fast = head;
+            Node slow = head;
+    
+            while(fast != null && fast.next != null){
+                fast = fast.next.next;
+                slow = slow.next;
+                if(fast == slow){
+                        length = cycleLength(slow);
+                        break;
+                }
+            }
+
+            if(length == 0){
+                return null;
+            }
+
+            // find the start node;
+            Node first = head;
+            Node second = head;
+
+            while(length > 0){
+                second = second.next;
+                length--;
+            }
+
+            // keep moving both forward and they will meet at cycle start 
+            while(first != second){
+                first = first.next;
+                second = second.next;
+            }
+
+            return second;
+
+        }
+
+        // Is Happy Number
+        public boolean isHappy(int n){
+            int slow = n;
+            int fast = n;
+
+            do{
+                slow = findSquare(slow);
+                fast = findSquare(findSquare(fast));
+            } while (slow != fast);
+
+            if(slow == 1){
+                return true;
+            }
+            return true;
+        }
+
+        private int findSquare(int number){
+            int ans = 0;
+            while(number > 0){
+                int rem = number % 10;
+                ans += rem * rem;
+                number /= 10;
+            }
+            return ans;
+        }
+
+        public Node middleNode(Node node){
+            Node s = head;
+            Node f = head;
+
+            while(f != null && f.next != null){
+                s = s.next;
+                f = f.next.next;
+            }
+            return s;
+        }
+
 
         
     }
