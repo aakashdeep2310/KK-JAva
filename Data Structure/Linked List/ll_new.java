@@ -402,35 +402,119 @@
         }
 
 
-        public ListNode sortList(ListNode head){
-            if(head == null || head.next == null){
+        // public ListNode sortList(ListNode head){
+        //     if(head == null || head.next == null){
+        //         return head;
+        //     }
+
+        //     ListNode mid = getMid(head);
+        //     ListNode left = sortList(head);
+        //     ListNode right = sortList(mid);
+
+        //     return merge(left, right);
+        // }
+
+        // ListNode merge(ListMode list1, ListNode list2){
+        //     ListNode dummyHead = new ListNode();
+        //     ListNode tail = dummyHead;
+        //     While(list1 != null && list2 != null){
+        //         if(list1.val < list2.val){
+        //             tail.next = list1;
+        //             list1 = list1.next;
+        //             tail = tail.next;
+        //         } else {
+        //             tail.next = list2;
+        //             list2 = list2.next;
+        //             tail = tail.next;
+        //         }
+        //     }
+        //     tail.next = (list1 != null) ? list1 : list2;
+        //     return dummyHead.next;
+        // }
+
+        // ListNode getMid(ListNode head){
+        //     ListNode midPrev = null;
+        //     while(head != null && head.next != null){
+        //         midPrev = (midPrev == null) ? head : midPrev.next;
+        //         head = head.next.next;
+        //     }
+        //     ListNode mid = midPrev.next;
+        //     midPrev.next = null;
+        //     return mid;
+        // }
+
+
+            // Reverse of linkedlist using recursion
+            public void reverseRec(Node node){
+                if(node == null){
+                    head = tail;
+                    return;
+                }
+
+                reverseRec(node.next);
+                tail.next = node;
+                tail = node;
+                tail.next = null;
+            }
+
+            // Reverse of linkedlist in place without taking extra space
+        
+            public void reverseIterative(Node head){
+                if(size < 2){
+                    return;
+                }
+
+                Node prev = null;
+                Node present = head;
+                
+                while(present != null){
+                    Node next  = present.next;
+                    present.next = prev;
+                    prev = present;
+                    present = next;
+                    if(next != null){
+                        next = next.next;
+                    }
+                }
+                head = prev;
+
+            }
+
+            public Node reverseBetween(Node head, int left, int right){
+                if(left == right){
+                    return head;
+                }
+
+
+                //skip the first left - 1 nodes
+                Node current = head;
+                Node prev = null;
+
+                for(int i = 0; current != null && i< left - 1; i++){
+                    prev = current;
+                    current = current.next;
+                }
+
+                Node last = prev;
+                Node newEnd = current;
+
+                // reverse between left and right
+                Node next = current.next;
+                for (int i = 0; current != null && i < right - left + 1; i++) {
+                    current.next = prev;
+                    prev = current;
+                    current = next;
+
+                    if(next != null){
+                        next = next.next;
+                    }
+                }
+                if(last != null){
+                    last.next = prev;
+                }else{
+                    head = prev;
+                }
+                newEnd.next = current;
                 return head;
             }
-
-            ListNode mid = getMid(head);
-            ListNode left = sortList(head);
-            ListNode right = sortList(mid);
-
-            return merge(left, right);
-        }
-
-        ListNode merge(ListMode list1, ListNode list2){
-            ListNode dummyHead = new ListNode();
-            ListNode tail = dummyHead;
-            While(list1 != null && list2 != null){
-                if(list1.val < list2.val){
-                    tail.next = list1;
-                    list1 = list1.next;
-                    tail = tail.next;
-                } else {
-                    tail.next = list2;
-                    list2 = list2.next;
-                    tail = tail.next;
-                }
-            }
-            tail.next = (list1 != null) ? list1 : list2;
-            return dummyHead.next;
-        }
-
-        
     }
