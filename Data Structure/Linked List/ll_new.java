@@ -459,9 +459,9 @@
 
             // Reverse of linkedlist in place without taking extra space
         
-            public void reverseIterative(Node head){
+            public Node reverseIterative(Node head){
                 if(size < 2){
-                    return;
+                    return head;
                 }
 
                 Node prev = null;
@@ -477,6 +477,7 @@
                     }
                 }
                 head = prev;
+                return head;
 
             }
 
@@ -517,4 +518,50 @@
                 newEnd.next = current;
                 return head;
             }
+
+            public boolean isPalindrome(Node head){
+                Node mid = middleNode(head);
+                Node headSecond = reverseIterative(mid);
+                Node rereverseHead = headSecond;
+
+                //Compare both the halves
+
+                while(head != null && headSecond != null){
+                    if(head.value != headSecond.value){
+                        break;
+                    }
+                    head = head.next;
+                    headSecond = headSecond.next;
+                }
+                reverseIterative(rereverseHead);
+                return head == null || headSecond == null;
+            }
+
+    
+    // Reorder of linked list
+    // 1-2-3-4-5-6-7
+    // 1-7-2-6-3-5-4
+        public void reorderList(Node head) {
+            if(head == null|| head.next == null){
+                return;
+            }
+            Node headFirst = head;
+            Node mid = middleNode(head);
+            Node rev = reverseIterative(mid);
+            Node headSecond = rev;
+            while(headFirst != null && headSecond != null){
+                Node temp = headFirst.next;
+    
+                headFirst.next = headSecond;
+                headFirst = temp;
+                temp = headSecond.next;
+                headSecond.next = headFirst;
+                headSecond = temp;
+            }
+    
+            if(headFirst != null){
+                headFirst.next = null;
+            }
+        }
     }
+
