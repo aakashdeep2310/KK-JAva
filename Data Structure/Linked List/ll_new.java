@@ -1,4 +1,5 @@
-    import java.util.LinkedList;
+    import java.net.http.HttpHeaders;
+import java.util.LinkedList;
     import java.util.NoSuchElementException;
 
 
@@ -401,6 +402,7 @@
             return s;
         }
 
+        // merge list
 
         // public ListNode sortList(ListNode head){
         //     if(head == null || head.next == null){
@@ -562,6 +564,37 @@
             if(headFirst != null){
                 headFirst.next = null;
             }
+        }
+
+
+        // Rotate list
+        public Node rotateRight(Node head, int k){
+
+            if(k<= 0|| head == null || head.next == null){
+                return head;
+            }
+            Node tail = head;
+            int length = 1;
+
+            while (tail.next != null) {
+                tail = tail.next;
+                length++;
+            }
+            tail.next = head;
+
+            int rotation = k% length;
+            int skip = length - rotation-1;
+
+            Node newLast = head;
+            for(int i = 0; i<skip; i++){
+                newLast = newLast.next;
+            }
+           
+            head = newLast.next;
+            newLast.next = null;
+            
+            
+            return head;
         }
     }
 
