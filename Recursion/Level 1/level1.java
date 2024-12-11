@@ -21,9 +21,9 @@ public class level1 {
         // int product = product(55);
         // System.out.println(product);
 
-        Reverse rv = new Reverse();
-        rv.rev1(2345);
-        System.out.println(rv.sum1);
+        // Reverse rv = new Reverse();
+        // rv.rev1(2345);
+        // System.out.println(rv.sum1);
         
 
     }
