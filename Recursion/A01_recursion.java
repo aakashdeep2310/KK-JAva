@@ -3,7 +3,7 @@ public class A01_recursion {
 
     public static void main(String[] args) {
         // print(1);
-        System.out.println((fibo(7)));
+        System.out.println((fibo(5)));
     
     }
 
